@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="16dp">
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        app:tint="@color/text_primary" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/ivChevron"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_chevron"
+        app:tint="@color/icon_gray" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:background="@null"
+        android:dropDownSelector="?attr/selectableItemBackground"
+        android:paddingEnd="2dp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/ivSpinnerArrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_arrow_drop_down"
+        app:tint="@color/icon_gray"
+        android:visibility="gone" />
+</LinearLayout>
