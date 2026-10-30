@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/primary" android:orientation="vertical">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:background="@color/primary" android:gravity="center_vertical" android:paddingHorizontal="12dp">
+        <ImageView android:id="@+id/btnBack" android:layout_width="40dp" android:layout_height="40dp" android:padding="8dp" android:src="@drawable/ic_back" app:tint="@color/white" />
+        <TextView android:id="@+id/tvHeaderTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:text="Riwayat Perjalanan" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:background="@drawable/bg_content" android:orientation="vertical">
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="16dp">
+                <TextView android:id="@+id/chip0" android:layout_width="wrap_content" android:layout_height="36dp" android:layout_marginEnd="8dp" android:background="@drawable/bg_chip_off" android:gravity="center" android:paddingHorizontal="18dp" android:text="Semua" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" />
+                <TextView android:id="@+id/chip1" android:layout_width="wrap_content" android:layout_height="36dp" android:layout_marginEnd="8dp" android:background="@drawable/bg_chip_off" android:gravity="center" android:paddingHorizontal="18dp" android:text="Hari Ini" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" />
+                <TextView android:id="@+id/chip2" android:layout_width="wrap_content" android:layout_height="36dp" android:layout_marginEnd="8dp" android:background="@drawable/bg_chip_off" android:gravity="center" android:paddingHorizontal="18dp" android:text="Minggu Ini" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" />
+                <TextView android:id="@+id/chip3" android:layout_width="wrap_content" android:layout_height="36dp" android:layout_marginEnd="8dp" android:background="@drawable/bg_chip_off" android:gravity="center" android:paddingHorizontal="18dp" android:text="Bulan Ini" android:textColor="@color/text_primary" android:textSize="12sp" android:textStyle="bold" />
+            </LinearLayout>
+        </HorizontalScrollView>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv" android:layout_width="match_parent" android:layout_height="match_parent" />
+            <TextView android:id="@+id/tvEmpty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="Belum ada perjalanan pada periode ini." android:textColor="@color/text_secondary" android:textSize="13sp" android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+  <!-- Header bar -->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:background="@color/primary"
+      android:gravity="center_vertical"
+      android:paddingHorizontal="12dp">
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_back"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Detail Perjalanan"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+  </LinearLayout>
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1">
+
+    <!-- Big Map View -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Top floating route card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_card"
+        android:elevation="6dp"
+        android:gravity="center_vertical"
+        android:padding="12dp">
+
+      <ImageView
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:background="@drawable/bg_gray_square"
+          android:padding="9dp"
+          android:src="@drawable/ic_place"
+          app:tint="@color/text_primary" />
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="12dp"
+          android:layout_weight="1"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvRouteSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <!-- Map controls on right -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="90dp"
+        android:orientation="vertical">
+
+      <ImageView
+          android:id="@+id/btnLocate"
+          android:layout_width="44dp"
+          android:layout_height="44dp"
+          android:background="@drawable/bg_circle_white"
+          android:elevation="4dp"
+          android:padding="10dp"
+          android:src="@drawable/ic_my_location"
+          app:tint="@color/text_primary" />
+
+      <ImageView
+          android:id="@+id/btnLayers"
+          android:layout_width="44dp"
+          android:layout_height="44dp"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/bg_circle_white"
+          android:elevation="4dp"
+          android:padding="10dp"
+          android:src="@drawable/ic_layers"
+          app:tint="@color/text_primary" />
+    </LinearLayout>
+
+    <!-- Bottom Detail Sheet -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_sheet"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+      <View
+          android:layout_width="36dp"
+          android:layout_height="4dp"
+          android:layout_gravity="center_horizontal"
+          android:background="@drawable/bg_grabber" />
+
+      <!-- Stat Grid (2x2) -->
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:orientation="horizontal">
+
+        <!-- Stat 1: Jarak -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_card"
+            android:gravity="center_vertical"
+            android:padding="12dp">
+
+          <ImageView
+              android:layout_width="28dp"
+              android:layout_height="28dp"
+              android:background="@drawable/bg_gray_square"
+              android:padding="6dp"
+              android:src="@drawable/ic_straighten"
+              app:tint="@color/text_primary" />
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblDist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jarak"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvDist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+          </LinearLayout>
+        </LinearLayout>
+
+        <!-- Stat 2: Waktu -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_card"
+            android:gravity="center_vertical"
+            android:padding="12dp">
+
+          <ImageView
+              android:layout_width="28dp"
+              android:layout_height="28dp"
+              android:background="@drawable/bg_gray_square"
+              android:padding="6dp"
+              android:src="@drawable/ic_clock"
+              app:tint="@color/text_primary" />
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblDur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waktu"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvDur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+          </LinearLayout>
+        </LinearLayout>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:orientation="horizontal">
+
+        <!-- Stat 3: Top Speed -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_card"
+            android:gravity="center_vertical"
+            android:padding="12dp">
+
+          <ImageView
+              android:layout_width="28dp"
+              android:layout_height="28dp"
+              android:background="@drawable/bg_gray_square"
+              android:padding="6dp"
+              android:src="@drawable/ic_speed"
+              app:tint="@color/text_primary" />
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblTopSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Speed"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvTopSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+          </LinearLayout>
+        </LinearLayout>
+
+        <!-- Stat 4: Elevasi -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_card"
+            android:gravity="center_vertical"
+            android:padding="12dp">
+
+          <ImageView
+              android:layout_width="28dp"
+              android:layout_height="28dp"
+              android:background="@drawable/bg_gray_square"
+              android:padding="6dp"
+              android:src="@drawable/ic_place"
+              app:tint="@color/text_primary" />
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="10dp"
+              android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblElevation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elevasi"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvElevation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+          </LinearLayout>
+        </LinearLayout>
+      </LinearLayout>
+
+      <!-- Additional detail card -->
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:background="@drawable/bg_card"
+          android:orientation="horizontal"
+          android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+          <TextView
+              android:id="@+id/lblAvgSpeed"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Kecepatan Rata-rata"
+              android:textColor="@color/text_secondary"
+              android:textSize="11sp" />
+
+          <TextView
+              android:id="@+id/tvAvgSpeed"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="2dp"
+              android:textColor="@color/text_primary"
+              android:textSize="14sp"
+              android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/stroke" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+          <TextView
+              android:id="@+id/lblDateTime"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Waktu Tempuh"
+              android:textColor="@color/text_secondary"
+              android:textSize="11sp" />
+
+          <TextView
+              android:id="@+id/tvDateTime"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="2dp"
+              android:textColor="@color/text_primary"
+              android:textSize="13sp"
+              android:textStyle="bold" />
+        </LinearLayout>
+      </LinearLayout>
+
+      <!-- Action Buttons -->
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="14dp"
+          android:orientation="horizontal">
+
+        <!-- Button 1: Rute Lagi / Navigasi -->
+        <LinearLayout
+            android:id="@+id/btnReRoute"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_primary"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+          <ImageView
+              android:layout_width="18dp"
+              android:layout_height="18dp"
+              android:src="@drawable/ic_navigation"
+              app:tint="@color/white" />
+
+          <TextView
+              android:id="@+id/tvBtnReRoute"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:text="Rute Lagi"
+              android:textColor="@color/white"
+              android:textSize="13sp"
+              android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Button 2: Hapus -->
+        <LinearLayout
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_end"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+          <ImageView
+              android:layout_width="18dp"
+              android:layout_height="18dp"
+              android:src="@drawable/ic_stop"
+              app:tint="@color/white" />
+
+          <TextView
+              android:id="@+id/tvBtnDelete"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              android:text="Hapus Perjalanan"
+              android:textColor="@color/white"
+              android:textSize="13sp"
+              android:textStyle="bold" />
+        </LinearLayout>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </FrameLayout>
+
+</LinearLayout>
