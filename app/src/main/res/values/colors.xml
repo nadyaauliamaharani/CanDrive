@@ -1,0 +1,20 @@
+<resources>
+    <color name="primary">#0F4A5E</color>
+    <color name="accent">#0F4A5E</color>
+    <color name="bg">#F6F7F8</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="stroke">#E3E8EB</color>
+    <color name="text_primary">#1B2A33</color>
+    <color name="text_secondary">#6B7A85</color>
+    <color name="ink">#1B2A33</color>
+    <color name="red">#E5484D</color>
+    <color name="end_red">#E2706D</color>
+    <color name="logout_bg">#F9DAD8</color>
+    <color name="logout_text">#E5534B</color>
+    <color name="chip_bg">#E8EEF0</color>
+    <color name="green">#2EAE62</color>
+    <color name="white">#FFFFFF</color>
+    <color name="icon_gray">#8E9BA4</color>
+    <color name="more_btn">#A9B8BF</color>
+    <color name="blue">#2F80ED</color>
+</resources>

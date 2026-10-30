@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    android:orientation="vertical">
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="64dp"
+      android:paddingHorizontal="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="CanDrive"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+      <FrameLayout
+          android:id="@+id/btnBell"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:clickable="true"
+          android:focusable="true">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_bell"
+            app:tint="@color/white" />
+
+        <View
+            android:id="@+id/dotBell"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="top|end"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_dot_red" />
+      </FrameLayout>
+
+      <FrameLayout
+          android:id="@+id/btnMore"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_marginStart="4dp"
+          android:clickable="true"
+          android:focusable="true">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_more"
+            app:tint="@color/white" />
+      </FrameLayout>
+    </LinearLayout>
+  </FrameLayout>
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:background="@drawable/bg_content"
+      android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="92dp"
+          android:background="@drawable/bg_card">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingStart="16dp">
+
+          <TextView
+              android:id="@+id/tvGreetingTitle"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Halo, Driver!"
+              android:textColor="@color/text_primary"
+              android:textSize="17sp"
+              android:textStyle="bold" />
+
+          <TextView
+              android:id="@+id/tvGreetingSub"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="2dp"
+              android:text="Jalan hari ini, cerita baru nanti."
+              android:textColor="@color/text_secondary"
+              android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_car_big" />
+      </FrameLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="18dp"
+          android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/qaNav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+          <ImageView
+              android:layout_width="56dp"
+              android:layout_height="56dp"
+              android:background="@drawable/bg_circle_primary"
+              android:padding="16dp"
+              android:src="@drawable/ic_navigation"
+              app:tint="@color/white" />
+
+          <TextView
+              android:id="@+id/tvQaNav"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="6dp"
+              android:text="Navigasi"
+              android:textColor="@color/text_primary"
+              android:textSize="12sp"
+              android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/qaHist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+          <ImageView
+              android:layout_width="56dp"
+              android:layout_height="56dp"
+              android:background="@drawable/bg_circle_primary"
+              android:padding="16dp"
+              android:src="@drawable/ic_history"
+              app:tint="@color/white" />
+
+          <TextView
+              android:id="@+id/tvQaHist"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="6dp"
+              android:text="Riwayat"
+              android:textColor="@color/text_primary"
+              android:textSize="12sp"
+              android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/qaCar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+          <ImageView
+              android:layout_width="56dp"
+              android:layout_height="56dp"
+              android:background="@drawable/bg_circle_primary"
+              android:padding="16dp"
+              android:src="@drawable/ic_car"
+              app:tint="@color/white" />
+
+          <TextView
+              android:id="@+id/tvQaCar"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="6dp"
+              android:text="Kendaraan"
+              android:textColor="@color/text_primary"
+              android:textSize="12sp"
+              android:textStyle="bold" />
+        </LinearLayout>
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvRecTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Rekomendasi Rute"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSeeAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Lihat semua"
+            android:textColor="@color/accent"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+      </LinearLayout>
+
+      <com.google.android.material.card.MaterialCardView
+          android:id="@+id/cardRoute"
+          android:layout_width="match_parent"
+          android:layout_height="170dp"
+          android:layout_marginTop="10dp"
+          app:cardBackgroundColor="@color/surface"
+          app:cardCornerRadius="16dp"
+          app:cardElevation="0dp"
+          app:strokeWidth="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+          <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:scaleType="centerCrop"
+              android:src="@drawable/bg_mobil" />
+
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="80dp"
+              android:background="@drawable/grad_scrim" />
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="14dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+              <ImageView
+                  android:layout_width="14dp"
+                  android:layout_height="14dp"
+                  android:src="@drawable/ic_place"
+                  app:tint="@color/ink" />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp"
+                  android:text="Jakarta → Bandung"
+                  android:textColor="@color/ink"
+                  android:textSize="13sp"
+                  android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical">
+
+              <ImageView
+                  android:layout_width="14dp"
+                  android:layout_height="14dp"
+                  android:src="@drawable/ic_clock"
+                  app:tint="@color/ink" />
+
+              <TextView
+                  android:id="@+id/tvRecRouteDetail"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="6dp"
+                  android:text="± 2 jam 30 menit · 136 km"
+                  android:textColor="@color/ink"
+                  android:textSize="12sp" />
+            </LinearLayout>
+          </LinearLayout>
+
+          <ImageView
+              android:id="@+id/btnRouteGo"
+              android:layout_width="36dp"
+              android:layout_height="36dp"
+              android:layout_gravity="end|bottom"
+              android:layout_margin="12dp"
+              android:background="@drawable/bg_circle_white"
+              android:padding="8dp"
+              android:src="@drawable/ic_arrow_fwd"
+              app:tint="@color/ink" />
+        </FrameLayout>
+      </com.google.android.material.card.MaterialCardView>
+
+      <LinearLayout
+          android:id="@+id/cardTips"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:background="@drawable/bg_card"
+          android:clickable="true"
+          android:focusable="true"
+          android:gravity="center_vertical"
+          android:padding="14dp">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_tire" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+          <TextView
+              android:id="@+id/tvTipsTitle"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Tips Berkendara"
+              android:textColor="@color/text_primary"
+              android:textSize="13sp"
+              android:textStyle="bold" />
+
+          <TextView
+              android:id="@+id/tvTipsSub"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="2dp"
+              android:text="Cek tekanan ban secara rutin untuk perjalanan yang lebih aman."
+              android:textColor="@color/text_secondary"
+              android:textSize="12sp" />
+        </LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

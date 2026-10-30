@@ -1,0 +1,12 @@
+<resources>
+    <color name="primary">#0B3442</color>
+    <color name="accent">#5BB6D6</color>
+    <color name="bg">#12181B</color>
+    <color name="surface">#1C2428</color>
+    <color name="stroke">#2B363B</color>
+    <color name="text_primary">#EAF0F2</color>
+    <color name="text_secondary">#9AA8B0</color>
+    <color name="chip_bg">#26323A</color>
+    <color name="logout_bg">#3A2523</color>
+    <color name="icon_gray">#7C8B94</color>
+</resources>
